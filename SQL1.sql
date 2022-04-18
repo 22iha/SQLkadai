@@ -1,3 +1,6 @@
+--基本問題
+
+
 CREATE TABLE major(
 major_id int primary key,
 major_name varchar(50));
@@ -40,3 +43,37 @@ select major_name from major;
 update student set grade=3 where student_id=10;
 
 delete from student where student_id=10;
+
+--発展問題
+
+create database db_exam_dev
+
+create table customer(
+customer_id int primary key,
+customer_name varchar(50));
+
+create table sales(
+sales_id int primary key,
+order_date date,
+customer_id int not null references costomer,
+amount decimal);
+
+insert into customer
+(customer_id,customer_name)
+values (1,'田中'),
+(2,'鈴木'),
+(3,'田中'),
+(4,'田島');
+
+insert into sales
+(sales_id,order_date,customer_id,amount)
+values (1,2018/11/01,1,3000),
+(2,2018/10/01,3,5000),
+(3,2018/10/01,4,6000),
+(4,2018/11/02,2,2000),
+(5,2018/11/15,2,NULL);
+
+
+
+
+
